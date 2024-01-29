@@ -1,0 +1,42 @@
+{
+  "menu": [
+    {
+      "name": "Nosotros",
+      "href": "#"
+    },
+    {
+      "name": "Contáctanos",
+      "href": "#"
+    },
+    {
+      "name": "Conoce más",
+      "href": "#"
+    }
+  ],
+  "menuHomePage": [
+    {
+      "name": "Trámites en línea",
+      "href": "#"
+    },
+    {
+      "name": "Ahorro e inversión",
+      "href": "#"
+    },
+    {
+      "name": "Empresa",
+      "href": "#"
+    },
+    {
+      "name": "Pensión",
+      "href": "#"
+    },
+    {
+      "name": "Descuento",
+      "href": "#"
+    },
+    {
+      "name": "Eventos",
+      "href": "#"
+    }
+  ]
+}
