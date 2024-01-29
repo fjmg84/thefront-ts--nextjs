@@ -1,8 +1,14 @@
-import { Button, Divider, Grid } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+
+
 import React from 'react';
 
-const DATA_MENU = [{
+
+import LayoutMyCodeTest from 'layouts/MyCodeTest';
+import { Grid } from '@mui/material';
+import MenuWithOutImageComponent from 'components/my-code-test/Menu/MenuWithOutImage';
+
+
+const MENU_PRINCIPAL = [{
   name: 'Nosotros',
   href: '#'
 }, {
@@ -13,52 +19,40 @@ const DATA_MENU = [{
   href: '#'
 }];
 
+const MENU_HOME = [{
+  name: 'Tramites en linea',
+  href: '#'
+}, {
+  name: 'Ahorro e inversion',
+  href: '#'
+}, {
+  name: 'Empresa',
+  href: '#'
+},
+{
+  name: 'Pension',
+  href: '#'
+}, {
+  name: 'Descuento',
+  href: '#'
+}, {
+  name: 'Eventos',
+  href: '#'
+}];
+
 export default function MyCodeTestHome(){
-
-  return <Grid container bgcolor='gray' justifyContent={'flex-end'} paddingX={9}>
-    {
-      DATA_MENU.map(({name,href}, index) => {
-        return <Grid item key={index} 
-          style={{
-            flexDirection: 'row',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
+  
+  return <LayoutMyCodeTest menu={MENU_PRINCIPAL} menuPage={MENU_HOME}>
     
-          }}
-        >
-          <Button  style={{
-            color: 'white',
-            fontWeight: 900,
-          }}  href={href} >{name}</Button>
-          
-          <Divider orientation='vertical' style={{
-            borderColor: 'white',
-            borderRightWidth: 2,
-            height: '50%',
-            width: '2px',
-            marginInline: 20,
-      
-          }}  /> 
-       
-        </Grid>;
-      
-      })}
-
-    <Grid item  
-      style={{
-        flexDirection: 'row',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+    <Grid container sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+      <MenuWithOutImageComponent menu={MENU_HOME} />
+      {/* 
     
-      }}
-    >
-      <SearchIcon style={{
-        color: 'white'
-        
-      }}/>
-    </Grid>
+    
+    
 
-  </Grid>;
+      <MenuWithImageComponent menu={DATA_MENU_ONE} />
+    */}
+    </Grid> 
+  </LayoutMyCodeTest>;
 }
