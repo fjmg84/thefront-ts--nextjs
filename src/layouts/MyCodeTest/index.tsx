@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Divider, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { Menu } from 'types/my-code-test/type';
-import MenuMobileComponent from 'components/my-code-test/Menu/MenuMobil';
+import MenuMobileComponent from './components/MenuMobil';
 
 interface Props {
   menu: Menu[];

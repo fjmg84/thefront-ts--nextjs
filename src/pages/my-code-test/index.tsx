@@ -1,12 +1,7 @@
-
-
 import React from 'react';
-
-
 import LayoutMyCodeTest from 'layouts/MyCodeTest';
 import { Grid } from '@mui/material';
-import MenuWithOutImageComponent from 'components/my-code-test/Menu/MenuWithOutImage';
-
+import MenuWithOutImageComponent from 'components/my-code-test/Menu/Menu';
 
 const MENU_PRINCIPAL = [{
   name: 'Nosotros',
@@ -46,13 +41,8 @@ export default function MyCodeTestHome(){
     
     <Grid container sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
       <MenuWithOutImageComponent menu={MENU_HOME} />
-      {/* 
-    
-    
-    
-
-      <MenuWithImageComponent menu={DATA_MENU_ONE} />
-    */}
     </Grid> 
+
+
   </LayoutMyCodeTest>;
 }
