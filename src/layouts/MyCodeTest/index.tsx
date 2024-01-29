@@ -8,6 +8,9 @@ import MenuWithOutImageComponent from 'components/my-code-test/Menu/Menu';
 import { usePathname } from 'next/navigation';
 
 
+import NewsComponent from 'components/my-code-test/News';
+import IndexsComponent from 'components/my-code-test/Indexs';
+
 
 interface Props {
   menu: Menu[];
@@ -16,10 +19,10 @@ interface Props {
 }
 
 
+
 export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
   const pathname = usePathname();
  
-
   const breadcrumb = pathname?.split('/').map((item, index) => {
   
     const name = item.replaceAll('-', ' ') ;
@@ -97,13 +100,39 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
       <MenuWithOutImageComponent menu={menuPage} />
     </Grid> 
     
-
-
     <Container>
-      <BasicBreadcrumbs breadcrumb={breadcrumb}/>    
-    </Container>
+      <Grid container style={{
+        display: 'flex',
+        width: '100%',
+        
+      }}
+      sx={{ 
+        flexDirection: { xs: 'column-reverse', md: 'row'},
+        gap: {xs: 20, md: 0},
+      }}
+      >
+        <Grid item sx={{
+          width: {xs: '100%', md: '70%'},
+        }}>
+          <BasicBreadcrumbs breadcrumb={breadcrumb}/>    
+          {children}
+        </Grid> 
 
-    {children}
+        <Grid item  sx={{
+          width: {xs: '100%', md: '30%'},
+        }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 20,
+        }}
+        >
+          <IndexsComponent/>
+          <NewsComponent/>
+        </Grid>   
+ 
+      </Grid>
+    </Container>
     
   
   </Grid>;

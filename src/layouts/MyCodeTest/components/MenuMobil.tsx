@@ -30,7 +30,7 @@ export default function MenuMobileComponent({menu, children}: Props){
       </List>
       <Divider />
       {children}
-      {/* */}
+    
      
     </Box>
   );

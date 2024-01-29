@@ -14,10 +14,12 @@ export default function MyCodeTestHome(props:Props){
   
   return <LayoutMyCodeTest menu={menuDefault} menuPage={menuHomePage}>
     
- 
-
     <Container>
-      <Typography component={'h1'} >
+      <Typography component={'h1'} style={{
+        color: '#d9272e',
+        fontWeight: 'bolder',
+        fontSize: '56px'
+      }} >
         Conoce nuestros Fondos
       </Typography>
     </Container>
