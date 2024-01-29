@@ -1,7 +1,6 @@
 import React from 'react';
 import LayoutMyCodeTest from 'layouts/MyCodeTest';
-import { Grid } from '@mui/material';
-import MenuWithOutImageComponent from 'components/my-code-test/Menu/Menu';
+import { Container, Typography } from '@mui/material';
 import { Menu } from 'types/my-code-test/type';
 
 interface Props {
@@ -15,10 +14,13 @@ export default function MyCodeTestHome(props:Props){
   
   return <LayoutMyCodeTest menu={menuDefault} menuPage={menuHomePage}>
     
-    <Grid container sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-      <MenuWithOutImageComponent menu={menuHomePage} />
-    </Grid> 
+ 
 
+    <Container>
+      <Typography component={'h1'} >
+        Conoce nuestros Fondos
+      </Typography>
+    </Container>
 
   </LayoutMyCodeTest>;
 }

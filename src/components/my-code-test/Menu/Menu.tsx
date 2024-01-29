@@ -4,7 +4,7 @@ import { Menu } from 'types/my-code-test/type';
 
 
 interface Props {
-    menu: Menu[];
+    menu?: Menu[];
 }
 
 export default function MenuWithOutImageComponent({menu}: Props){
@@ -14,7 +14,7 @@ export default function MenuWithOutImageComponent({menu}: Props){
     }}
   >
     {
-      menu.map(({name,href}, index) => {
+      menu?.map(({name,href}, index) => {
         return <Grid item key={index} 
           style={{
             flexDirection: 'row',

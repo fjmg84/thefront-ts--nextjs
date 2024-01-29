@@ -1,8 +1,13 @@
 import React from 'react';
-import { Button, Divider, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Button, Container, Divider, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { Menu } from 'types/my-code-test/type';
 import MenuMobileComponent from './components/MenuMobil';
+import BasicBreadcrumbs from 'components/my-code-test/Breadcrumbs';
+import MenuWithOutImageComponent from 'components/my-code-test/Menu/Menu';
+import { usePathname } from 'next/navigation';
+
+
 
 interface Props {
   menu: Menu[];
@@ -12,6 +17,21 @@ interface Props {
 
 
 export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
+  const pathname = usePathname();
+ 
+
+  const breadcrumb = pathname?.split('/').map((item, index) => {
+  
+    const name = item.replaceAll('-', ' ') ;
+ 
+    return {
+      name,
+      href: item,
+      active: index === pathname?.split('/').length - 1,
+    };
+  });
+ 
+  
   return <Grid container>
 
     <MenuMobileComponent menu={menu}>
@@ -72,6 +92,19 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
       </Grid>
 
     </Grid>
+
+    <Grid container sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+      <MenuWithOutImageComponent menu={menuPage} />
+    </Grid> 
+    
+
+
+    <Container>
+      <BasicBreadcrumbs breadcrumb={breadcrumb}/>    
+    </Container>
+
     {children}
+    
+  
   </Grid>;
 }
