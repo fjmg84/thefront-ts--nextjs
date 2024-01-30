@@ -96,7 +96,10 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
       <MenuHomePageComponent menu={menuPage} />
     </Grid> 
     
-    <Container>
+    <Container  maxWidth={'xl'}
+      /* sx={{
+        background: {md: 'green', lg: 'yellow'}  
+      }} */>
       <Grid container style={{
         display: 'flex',
         width: '100%',

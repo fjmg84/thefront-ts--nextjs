@@ -1,39 +1,39 @@
 import React from 'react';
+import { Container } from '@mui/material';
 import LayoutMyCodeTest from 'layouts/MyCodeTest';
-import { Container, Typography } from '@mui/material';
-import { Menu } from 'types/my-code-test/type';
+import { Menu, HomePage } from 'types/my-code-test/type';
+import MyCodeTestHomeView from 'views/MyCodeTest';
+import data from '../../mock/data.json';
 
 interface Props {
   menuDefault: Menu[],
-  menuHomePage: Menu[],
+  homePage: HomePage,
 }
 
 export default function MyCodeTestHome(props:Props){
 
-  const {menuDefault, menuHomePage} = props;
+  const {menuDefault, homePage} = props;
   
-  return <LayoutMyCodeTest menu={menuDefault} menuPage={menuHomePage}>
+  return <LayoutMyCodeTest menu={menuDefault} menuPage={homePage.menu}>
     
-    <Container>
-      <Typography component={'h1'} style={{
-        color: '#d9272e',
-        fontWeight: 'bolder',
-        fontSize: '56px'
-      }} >
-        Conoce nuestros Fondos
-      </Typography>
+    <Container style={{
+      padding:0
+    }}
+   
+    >
+      <MyCodeTestHomeView {...homePage}/>
     </Container>
 
   </LayoutMyCodeTest>;
 }
 
-import data from '../../mock/data.json';
+
 
 export async function getStaticProps() {
   return {
     props: {
       menuDefault: data.menu,
-      menuHomePage: data.menuHomePage
+      homePage: data.homePage
     }
   };
 }
