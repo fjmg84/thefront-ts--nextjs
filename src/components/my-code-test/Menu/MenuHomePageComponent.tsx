@@ -7,7 +7,7 @@ interface Props {
     menu?: Menu[];
 }
 
-export default function MenuWithOutImageComponent({menu}: Props){
+export default function MenuHomePageComponent({menu}: Props){
   return <Grid container bgcolor='white' justifyContent={'flex-end'} paddingX={9} paddingY={1}
     style={{
       boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)',

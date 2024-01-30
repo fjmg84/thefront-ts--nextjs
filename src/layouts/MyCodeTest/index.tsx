@@ -4,13 +4,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Menu } from 'types/my-code-test/type';
 import MenuMobileComponent from './components/MenuMobil';
 import BasicBreadcrumbs from 'components/my-code-test/Breadcrumbs';
-import MenuWithOutImageComponent from 'components/my-code-test/Menu/Menu';
-import { usePathname } from 'next/navigation';
-
-
 import NewsComponent from 'components/my-code-test/News';
 import IndexsComponent from 'components/my-code-test/Indexs';
-
+import MenuHomePageComponent from 'components/my-code-test/Menu/MenuHomePageComponent';
 
 interface Props {
   menu: Menu[];
@@ -18,23 +14,23 @@ interface Props {
   children: JSX.Element
 }
 
-
-
 export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
-  const pathname = usePathname();
+  const breadcrumb = [{
+    name: 'Home',
+    href: '/', 
+  },{
+    name: 'Ahorro e inversiones',
+    href: '/ahorro-e-inversiones', 
+  },{
+    name: 'Ahorro voluntario',
+    href: '/ahorro-e-inversiones/ahorro-voluntario', 
+  },
+  {
+    name: 'Conoce nuestros Fondos',
+    href: '', 
+  }];
  
-  const breadcrumb = pathname?.split('/').map((item, index) => {
-  
-    const name = item.replaceAll('-', ' ') ;
  
-    return {
-      name,
-      href: item,
-      active: index === pathname?.split('/').length - 1,
-    };
-  });
- 
-  
   return <Grid container>
 
     <MenuMobileComponent menu={menu}>
@@ -97,7 +93,7 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
     </Grid>
 
     <Grid container sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-      <MenuWithOutImageComponent menu={menuPage} />
+      <MenuHomePageComponent menu={menuPage} />
     </Grid> 
     
     <Container>
