@@ -16,20 +16,20 @@ export default function BasicBreadcrumbs({breadcrumb}: any) {
     <div role="presentation" onClick={handleClick}>
       
       <Breadcrumbs aria-label="breadcrumb"  separator="›">
-
-     
         {
-          breadcrumb.map(({name, href})  => {
+          breadcrumb.map(({name, href}, index)  => {
             return  <Link
               key={href}
-              underline="hover"
-              color="inherit"
+              underline='none'
+              color={breadcrumb.length -1  !== index ? 'inherit' : '#d9272e'}
               style={{
-                textTransform: 'capitalize'
+                textTransform: 'capitalize',
+                display: 'flex',
+                alignItems: 'center',
               }}
               href={href}
             >
-              {name === '' ?  <HomeIcon fontSize="inherit" /> : name}
+              {name === 'Home' ?  <HomeIcon /> : name}
             </Link>;
           })
         }
