@@ -10,19 +10,30 @@ import Paper from '@mui/material/Paper';
 interface Props {
     cell: string[];
     rows: Array<Record<string, unknown>>;
+    title?: string;
 }
 
-export default function BasicTable({cell, rows}:Props) {
+export default function BasicTable({cell, rows, title}:Props) {
  
   return (
     <TableContainer component={Paper} style={{
-      marginTop: '20px'
+      marginTop: '20px',
+      marginBottom: '20px',
     }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        
         <TableHead style={{
-          background: '#f5f5f5',
-          
+          background: '#f5f5f5', 
         }}>
+          {
+            title && <TableRow >
+              <TableCell style={{
+                color: 'gray',
+                fontWeight: 400,
+                fontSize: '34px',
+              }} colSpan={200}>{title}</TableCell>
+            </TableRow>
+          }
           <TableRow >
             {
               cell.map((item, index) => <TableCell key={index} align="left" style={{

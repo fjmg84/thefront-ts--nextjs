@@ -4,10 +4,13 @@ import { HomePage } from 'types/my-code-test/type';
 import CardComponent from './components/Card';
 import AccordionUsage from './components/Accordion';
 import BasicTable from './components/Table';
+import ListItem from './components/ListItem';
 
 
-export default function MyCodeTestHomeView({projects, investor_service_section, frequent_questions, investment_manager}: HomePage){
-  console.log({projects, investor_service_section, frequent_questions, investment_manager});
+export default function MyCodeTestHomeView({projects, investor_service_section, frequent_questions, investment_manager, principal_function, commercial_agents}: HomePage){
+  console.log(commercial_agents);
+
+
   return <Grid container style={{
     color: 'gray'
   }}>
@@ -89,20 +92,7 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, mollitia?
           </Typography>
 
-          <ul style={{
-            display: 'flex',
-            gap: '10px',
-            flexDirection: 'column',
-            listStyle: 'decimal',
-            padding: 0,
-            paddingLeft: '28px'
-          }}>
-            {
-              investor_service_section.map((text, index) => {
-                return <li key={index}>{text}</li>;
-              })
-            }
-          </ul>  
+          <ListItem values={investor_service_section} listStyle='decimal'/>
 
         </Grid>      
   
@@ -123,7 +113,7 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
           }
         </Grid>
 
-        <Grid container xs={12} gap={1}>
+        <Grid container xs={12} gap={2}>
           <Typography component={'h1'} style={{
             fontWeight: 'bolder',
             fontSize: '36px'
@@ -139,7 +129,6 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
 
           <Typography component={'p'} style={{
             fontWeight: 'bolder',
-         
           }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sint iure eveniet fugit modi soluta aliquam corporis amet repudiandae nostrum.
           </Typography>
@@ -151,6 +140,80 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
             'Nombre Gestor'
           ]}
           rows={investment_manager}/>
+
+          <Typography component={'p'} style={{
+            fontWeight: 'bolder',
+          }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sint iure eveniet fugit modi soluta aliquam corporis amet repudiandae nostrum.
+          </Typography>
+          
+          <Typography component={'p'} style={{
+            fontWeight: 'bolder',
+          }}>
+              Rafael Castellanos
+          </Typography>
+
+          <Typography component={'p'}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sint iure eveniet fugit modi soluta aliquam corporis amet repudiandae nostrum.
+          </Typography>
+
+          <BasicTable cell={[
+            'Año',
+            'Estudio',
+            'Lugar',
+          ]}
+          rows={[
+            {year: 2008, study: 'MBA, Babson Collage', place: 'Wellesley. Massachusetts'},
+            {year: 1998, study: 'MBA, Babson Collage', place: 'Wellesley. Massachusetts'}
+          ]}/>
+
+          <Typography component={'p'} style={{width: '100%'}}>
+              Experiencia profesional
+          </Typography>
+
+          <Typography component={'p'} style={{fontWeight: 'bolder', width: '100%'}} >
+              Gerente de Inversiones AFP CONFIA
+          </Typography>
+
+          <Typography component={'p'} style={{width: '100%'}} >
+              Funciones principales
+          </Typography>
+
+          <ListItem values={principal_function} listStyle='disc'/>
+         
+          <Typography component={'p'} style={{fontWeight: 'bolder', width: '100%'}} >
+              Oficial de Riesgo Fiduciario AFP CONFIA
+          </Typography>
+
+          <Typography component={'p'} style={{width: '100%'}} >
+              Funciones principales
+          </Typography>
+
+          <ListItem values={principal_function} listStyle='disc'/>
+
+          <Typography component={'p'} style={{fontWeight: 'bolder', width: '100%'}} >
+              Agentes Comercializadores
+          </Typography>
+
+          <Typography component={'p'} style={{ width: '100%'}} >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt iusto tenetur molestias accusantium assumenda aperiam id nisi doloremque autem? Dolorum fugiat nostrum, officia cupiditate labore delectus aliquid praesentium tenetur doloribus quaerat? Corrupti, minus rem. Libero ut laboriosam vero ullam dolor, laborum, cupiditate architecto nihil voluptatem neque, perferendis officiis. Unde, sint!
+          </Typography>
+
+          {
+            commercial_agents.map(({data, title}, index) => {
+              return <BasicTable key={index} title={title} cell={[
+                'Nombre Completo',
+                'Correo Electrónico',
+                'Teléfono',
+                'Dirección'
+              ]}
+              rows={data}/>;
+            })
+          }
+
+          
+
+
         </Grid>
 
 

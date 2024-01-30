@@ -21,10 +21,24 @@ export type InvestmentManager = {
   manager: string;
 };
 
+export type CommercialAgents = {
+  title: string;
+  data: [
+    {
+      name: string;
+      email: string;
+      phone: string;
+      address: string;
+    },
+  ];
+};
+
 export interface HomePage {
   menu: Menu[];
   projects: Project[];
   investor_service_section: string[];
   frequent_questions: FrequentQuestion[];
   investment_manager: InvestmentManager[];
+  principal_function: string[];
+  commercial_agents: CommercialAgents[];
 }
