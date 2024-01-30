@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Typography } from '@mui/material';
 import { HomePage } from 'types/my-code-test/type';
 import CardComponent from './components/Card';
@@ -10,9 +10,11 @@ import ListItem from './components/ListItem';
 export default function MyCodeTestHomeView({projects, investor_service_section, frequent_questions, investment_manager, principal_function, commercial_agents}: HomePage){
   console.log(commercial_agents);
 
+  const [showMenu, setShowMenu] = useState(false);
+
 
   return <Grid container style={{
-    color: 'gray'
+    color: 'gray',
   }}>
     <Grid item xs={12}>
 
@@ -30,18 +32,56 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
       xs={12}
       style={{
         display: 'flex',
+        position: 'relative',
+        alignContent: 'center'
       }}
       sx={{
         flexDirection: {xs: 'row', lg: 'column'},
+
         /* background: {xs: 'green', lg:'yellow'} */
       }}
     >
 
-      <Grid item xs={12} lg={4} >Navegation</Grid>
-      <Grid item xs={12} lg={8} gap={8} style={{
+      <button onClick={() => setShowMenu(!showMenu)} 
+        style={{
+          position: 'absolute',
+          zIndex: 100
+        }}
+      >show</button>
+      
+      <Grid item xs={4}
+        sx={{
+          display: {xs: 'none', lg:'flex'}
+        }}
+        style={{
+          flexDirection: 'column',
+          gap: 20,
+          borderRight: '1px solid gray',
+          padding: '2%',
+          minHeight: '100%',
+          transition: 'all 0.2s ease',
+          translate: `${showMenu ? '-80%' : 0}`,
+          position: `${showMenu ? 'absolute' : 'relative'}`,
+          background: 'white'
+        }}>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?</p>
+
+      </Grid>
+      
+
+      <Grid item xs={12} lg={8}  gap={8} style={{
         padding: '2%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        transition: 'all 0.2s ease',
+        
+      }}
+
+      sx={{
+        marginLeft: {md: 0, lg: `${!showMenu ? 0 : '5%'}`},
       }}
       >
         <Grid container xs={12} gap={3}

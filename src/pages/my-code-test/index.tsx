@@ -19,7 +19,6 @@ export default function MyCodeTestHome(props:Props){
     <Container style={{
       padding:0
     }}
-   
     >
       <MyCodeTestHomeView {...homePage}/>
     </Container>

@@ -96,17 +96,14 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
       <MenuHomePageComponent menu={menuPage} />
     </Grid> 
     
-    <Container  maxWidth={'xl'}
-      /* sx={{
-        background: {md: 'green', lg: 'yellow'}  
-      }} */>
+    <Container  maxWidth={'xl'}>
       <Grid container style={{
         display: 'flex',
         width: '100%',
-        
+        padding: 10
       }}
       sx={{ 
-        flexDirection: { xs: 'column-reverse', md: 'row'},
+        flexDirection: { xs: 'column-reverse', lg: 'row'},
         gap: {xs: 20, md: 0},
       }}
       >
@@ -124,6 +121,8 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
           display: 'flex',
           flexDirection: 'column',
           gap: 20,
+          borderLeft: '1px solid gray',
+          padding: '2%',
         }}
         >
           <IndexsComponent/>
