@@ -1,16 +1,14 @@
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
-import { Project } from 'types/my-code-test/type';
+import { HomePage } from 'types/my-code-test/type';
 import CardComponent from './components/Card';
-
-interface Props {
-  projects: Project[],
-  investor_service_section: string[]
-}
+import AccordionUsage from './components/Accordion';
 
 
-export default function MyCodeTestHomeView({projects, investor_service_section}: Props){
-  console.log(investor_service_section);
+
+
+export default function MyCodeTestHomeView({projects, investor_service_section, frequent_questions}: HomePage){
+  console.log({projects, investor_service_section, frequent_questions});
   return <Grid container style={{
     color: 'gray'
   }}>
@@ -111,7 +109,19 @@ export default function MyCodeTestHomeView({projects, investor_service_section}:
   
 
         <Grid container xs={12}>
-            
+          <Typography component={'h1'} style={{
+            fontWeight: 'bolder',
+            fontSize: '36px'
+          }}>
+               Preguntas Frecuentes (FAQ)
+          </Typography>
+
+          {
+            frequent_questions.map(({question,  answer}, index) => {
+              
+              return <AccordionUsage key={index} id={index.toString()} title={question} details={answer}/>;
+            })
+          }
         </Grid>    
 
 

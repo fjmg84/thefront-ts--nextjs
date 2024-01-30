@@ -56,6 +56,28 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et."
+    ],
+    "frequent_questions": [
+      {
+        "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque?",
+        "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et."
+      },
+      {
+        "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque?",
+        "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et."
+      },
+      {
+        "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque?",
+        "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et."
+      },
+      {
+        "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque?",
+        "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et."
+      },
+      {
+        "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque?",
+        "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et."
+      }
     ]
   }
 }
