@@ -78,6 +78,32 @@
         "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque?",
         "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et."
       }
+    ],
+    "investment_manager": [
+      {
+        "record": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et.",
+        "date": "AD-00001-2020",
+        "admin": "Lorem ipsum dolor sit amet.",
+        "manager": "Lorem ipsum dolor sit amet."
+      },
+      {
+        "record": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et.",
+        "date": "AD-00001-2020",
+        "admin": "Lorem ipsum dolor sit amet.",
+        "manager": "Lorem ipsum dolor sit amet."
+      },
+      {
+        "record": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et.",
+        "date": "AD-00001-2020",
+        "admin": "Lorem ipsum dolor sit amet.",
+        "manager": "Lorem ipsum dolor sit amet."
+      },
+      {
+        "record": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque eos cupiditate nesciunt sit consequuntur repellat expedita nihil veniam et.",
+        "date": "AD-00001-2020",
+        "admin": "Lorem ipsum dolor sit amet.",
+        "manager": "Lorem ipsum dolor sit amet."
+      }
     ]
   }
 }

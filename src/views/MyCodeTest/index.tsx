@@ -3,12 +3,11 @@ import { Grid, Typography } from '@mui/material';
 import { HomePage } from 'types/my-code-test/type';
 import CardComponent from './components/Card';
 import AccordionUsage from './components/Accordion';
+import BasicTable from './components/Table';
 
 
-
-
-export default function MyCodeTestHomeView({projects, investor_service_section, frequent_questions}: HomePage){
-  console.log({projects, investor_service_section, frequent_questions});
+export default function MyCodeTestHomeView({projects, investor_service_section, frequent_questions, investment_manager}: HomePage){
+  console.log({projects, investor_service_section, frequent_questions, investment_manager});
   return <Grid container style={{
     color: 'gray'
   }}>
@@ -108,7 +107,7 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
         </Grid>      
   
 
-        <Grid container xs={12}>
+        <Grid container xs={12} gap={1}>
           <Typography component={'h1'} style={{
             fontWeight: 'bolder',
             fontSize: '36px'
@@ -122,7 +121,37 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
               return <AccordionUsage key={index} id={index.toString()} title={question} details={answer}/>;
             })
           }
-        </Grid>    
+        </Grid>
+
+        <Grid container xs={12} gap={1}>
+          <Typography component={'h1'} style={{
+            fontWeight: 'bolder',
+            fontSize: '36px'
+          }}>
+               Administrador de Inversiones y Agentes Comercializadores
+          </Typography>
+
+          <Typography component={'p'} style={{
+            fontWeight: 'bolder',
+          }}>
+               Administrador de Inversiones
+          </Typography>
+
+          <Typography component={'p'} style={{
+            fontWeight: 'bolder',
+         
+          }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sint iure eveniet fugit modi soluta aliquam corporis amet repudiandae nostrum.
+          </Typography>
+
+          <BasicTable cell={[
+            'Asiento Registral No.',
+            'Fecha de asiento registral',
+            'Nombre de administrador de inversiones',
+            'Nombre Gestor'
+          ]}
+          rows={investment_manager}/>
+        </Grid>
 
 
       </Grid>
