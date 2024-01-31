@@ -5,12 +5,14 @@ import CardComponent from './components/Card';
 import AccordionUsage from './components/Accordion';
 import BasicTable from './components/Table';
 import ListItem from './components/ListItem';
-
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import ListIndex from './components/ListIndex';
 
 export default function MyCodeTestHomeView({projects, investor_service_section, frequent_questions, investment_manager, principal_function, commercial_agents}: HomePage){
-  console.log(commercial_agents);
+  // console.log(commercial_agents);
 
   const [showMenu, setShowMenu] = useState(false);
+  const [index] = useState(0);
 
 
   return <Grid container style={{
@@ -37,17 +39,23 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
       }}
       sx={{
         flexDirection: {xs: 'row', lg: 'column'},
-
-        /* background: {xs: 'green', lg:'yellow'} */
       }}
     >
 
       <button onClick={() => setShowMenu(!showMenu)} 
         style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '10px',
+          background: 'transparent',
+          border: '2px solid gray',
+          borderRadius: '10px',
+          cursor: 'pointer',
           position: 'absolute',
           zIndex: 100
         }}
-      >show</button>
+      ><MenuOpenIcon/></button>
       
       <Grid item xs={4}
         sx={{
@@ -57,7 +65,7 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
           flexDirection: 'column',
           gap: 20,
           borderRight: '1px solid gray',
-          padding: '2%',
+          padding: '0',
           minHeight: '100%',
           transition: 'all 0.2s ease',
           translate: `${showMenu ? '-80%' : 0}`,
@@ -65,15 +73,16 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
           background: 'white'
         }}>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?</p>
-
+        <ListIndex activeIndex={index} listIndexs={[
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perferendis?'
+        ]}/>
       </Grid>
       
 
       <Grid item xs={12} lg={8}  gap={8} style={{
-        padding: '2%',
+        padding: '0 2%',
         display: 'flex',
         flexDirection: 'column',
         transition: 'all 0.2s ease',
