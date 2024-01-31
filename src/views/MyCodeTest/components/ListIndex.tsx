@@ -17,6 +17,7 @@ export default function ListIndex({activeIndex, listIndexs}: Props){
       listIndexs.map((item, index) => {
         return <div key={index} style={{
           display: 'flex',
+          gap: 10,
           color: `${activeIndex === index ? '#d9272e' : 'gray'}`
         }}>
           {item}

@@ -101,12 +101,13 @@ export default function LayoutMyCodeTest({menu, page, footer, children}: Props){
       <MenuHomePageComponent menu={page.menu} />
     </Grid> 
 
+    <SocialMedias/>
+
     <Container  maxWidth={'xl'} style={{
       position: 'relative'
     }}>
 
-
-      <SocialMedias/>
+     
       
       <Grid container style={{
         display: 'flex',

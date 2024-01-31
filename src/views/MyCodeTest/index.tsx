@@ -59,7 +59,7 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
       
       <Grid item xs={4}
         sx={{
-          display: {xs: 'none', lg:'flex'}
+          display: {xs: 'none', lg:'inline'}
         }}
         style={{
           flexDirection: 'column',

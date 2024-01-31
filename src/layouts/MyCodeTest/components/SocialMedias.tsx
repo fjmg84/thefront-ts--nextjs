@@ -7,7 +7,7 @@ export default function SocialMedias(){
     flexDirection: 'column',
     background: '#d9272e',
     position: 'absolute',
-    top: '6%',
+    top: '40%',
     borderTopLeftRadius: 10,
     borderEndStartRadius: 10,
     padding: 10,

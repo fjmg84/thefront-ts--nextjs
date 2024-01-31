@@ -35,7 +35,7 @@ export default function Footer({footer}: {footer: FooterType}){
         width: 'auto',
         height: 'auto',
         position: 'absolute',
-        bottom: '-54.5px'
+        bottom: '-42.3px'
       }}/>
 
       <div style={{
