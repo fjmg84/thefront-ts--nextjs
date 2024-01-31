@@ -1,20 +1,23 @@
 import React from 'react';
 import { Button, Container, Divider, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { Menu } from 'types/my-code-test/type';
+import { Footer as FooterType, HomePage, Menu } from 'types/my-code-test/type';
 import MenuMobileComponent from './components/MenuMobil';
 import BasicBreadcrumbs from 'components/my-code-test/Breadcrumbs';
 import NewsComponent from 'components/my-code-test/News';
 import IndexsComponent from 'components/my-code-test/Indexs';
 import MenuHomePageComponent from 'components/my-code-test/Menu/MenuHomePageComponent';
 
+import Footer from './components/Footer';
+
 interface Props {
   menu: Menu[];
-  menuPage?: Menu[],
+  page:HomePage,
+  footer: FooterType,
   children: JSX.Element
 }
 
-export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
+export default function LayoutMyCodeTest({menu, page, footer, children}: Props){
   const breadcrumb = [{
     name: 'Home',
     href: '/', 
@@ -30,12 +33,13 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
     href: '', 
   }];
  
+  console.log(footer);
  
   return <Grid container>
 
     <MenuMobileComponent menu={menu}>
       <List>
-        {menuPage?.map(({name}) => (
+        {page.menu?.map(({name}) => (
           <ListItem key={name} disablePadding>
             <ListItemButton>
               <ListItemText primary={name} />
@@ -93,7 +97,7 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
     </Grid>
 
     <Grid container sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-      <MenuHomePageComponent menu={menuPage} />
+      <MenuHomePageComponent menu={page.menu} />
     </Grid> 
     
     <Container  maxWidth={'xl'}>
@@ -131,6 +135,8 @@ export default function LayoutMyCodeTest({menu, menuPage, children}: Props){
  
       </Grid>
     </Container>
+
+    <Footer footer={footer}/>
     
   
   </Grid>;

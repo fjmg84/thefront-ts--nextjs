@@ -33,6 +33,14 @@ export type CommercialAgents = {
   ];
 };
 
+export type Footer = {
+  affiliates: string[];
+  pensioners: string[];
+  companies: string[];
+  customer_service: string[];
+  voluntary_savings: string[];
+};
+
 export interface HomePage {
   menu: Menu[];
   projects: Project[];
