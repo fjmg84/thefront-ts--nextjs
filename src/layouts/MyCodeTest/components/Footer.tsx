@@ -3,6 +3,7 @@ import { Button, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import LogoFooter from '../../../assets/logo-footer.png';
 import { Footer as FooterType } from 'types/my-code-test/type';
+import { EpArrowUpBold, MdiWhatsapp } from './Icons';
 
 export default function Footer({footer}: {footer: FooterType}){
   return <Grid container xs={12} style={{
@@ -36,6 +37,48 @@ export default function Footer({footer}: {footer: FooterType}){
         position: 'absolute',
         bottom: '-54.5px'
       }}/>
+
+      <div style={{
+        position: 'absolute',
+        right: 20,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 10,
+      }}>
+        <div style={{
+          background: '#d9272e',
+          borderRadius: '50%',
+          padding:10
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '50px',
+            padding: '3px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <MdiWhatsapp width={'1.5rem'} height={'1.5rem'} fill='#d9272e'/>
+          </div>
+        </div>
+
+        <div style={{
+          background: '#d9272e',
+          borderRadius: '50%',
+          padding:10
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '50px',
+            padding: '3px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <EpArrowUpBold width={'1.5rem'} height={'1.5rem'} fill='#d9272e'/>
+          </div>
+        </div>
+      </div>
     </Grid>
 
     <Grid item style={{

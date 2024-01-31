@@ -10,6 +10,8 @@ import MenuHomePageComponent from 'components/my-code-test/Menu/MenuHomePageComp
 
 import Footer from './components/Footer';
 
+import SocialMedias from './components/SocialMedias';
+
 interface Props {
   menu: Menu[];
   page:HomePage,
@@ -32,8 +34,7 @@ export default function LayoutMyCodeTest({menu, page, footer, children}: Props){
     name: 'Conoce nuestros Fondos',
     href: '', 
   }];
- 
-  console.log(footer);
+
  
   return <Grid container>
 
@@ -99,8 +100,14 @@ export default function LayoutMyCodeTest({menu, page, footer, children}: Props){
     <Grid container sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
       <MenuHomePageComponent menu={page.menu} />
     </Grid> 
-    
-    <Container  maxWidth={'xl'}>
+
+    <Container  maxWidth={'xl'} style={{
+      position: 'relative'
+    }}>
+
+
+      <SocialMedias/>
+      
       <Grid container style={{
         display: 'flex',
         width: '100%',
@@ -131,7 +138,7 @@ export default function LayoutMyCodeTest({menu, page, footer, children}: Props){
         >
           <IndexsComponent/>
           <NewsComponent/>
-        </Grid>   
+        </Grid> 
  
       </Grid>
     </Container>
