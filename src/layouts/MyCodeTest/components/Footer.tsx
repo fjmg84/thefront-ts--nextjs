@@ -9,7 +9,7 @@ export default function Footer({footer}: {footer: FooterType}){
   return <Grid container xs={12} style={{
     background: '#77777a',
     width: '100%',
-
+    marginTop: 40
   }}>
     <Grid item style={{
       display: 'flex',
@@ -35,7 +35,7 @@ export default function Footer({footer}: {footer: FooterType}){
         width: 'auto',
         height: 'auto',
         position: 'absolute',
-        bottom: '-42.3px'
+        bottom: '-53.5px'
       }}/>
 
       <div style={{

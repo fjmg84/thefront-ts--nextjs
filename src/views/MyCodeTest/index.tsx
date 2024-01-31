@@ -69,7 +69,7 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
           minHeight: '100%',
           transition: 'all 0.2s ease',
           translate: `${showMenu ? '-80%' : 0}`,
-          position: `${showMenu ? 'absolute' : 'relative'}`,
+          position: `${showMenu ? 'absolute' : 'initial'}`,
           background: 'white'
         }}>
 
@@ -86,7 +86,7 @@ export default function MyCodeTestHomeView({projects, investor_service_section, 
         display: 'flex',
         flexDirection: 'column',
         transition: 'all 0.2s ease',
-        
+        minHeight: '100%'
       }}
 
       sx={{
